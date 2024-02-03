@@ -5,6 +5,17 @@ const cors=require("cors")
 
 // Middleware
 app.use(cors());
+
+app.use(cors(
+    {
+        origin:["https://bookstore-sourabh.vercel.app"],
+        methods:["POST","GET","PUT","PATCH","DELETE"],
+        credentials: true
+    }
+    
+));
+
+mongodb+srv://book-store:drishti12345@cluster0.nfnw30m.mongodb.net/?retryWrites=true&w=majority
 app.use(express.json());
 
 app.get('/',(req,res)=>{
